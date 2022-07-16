@@ -5,15 +5,12 @@ function getComputerChoice(){
         case 0:
             console.log('Rock');
             return('Rock');
-            break;
         case 1:
             console.log('Paper');
             return('Paper');
-            break;
         case 2:     
             console.log('Scissors');
             return('Scissors');
-            break;   
     }
 }
 
