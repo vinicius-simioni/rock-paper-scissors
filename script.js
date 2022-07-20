@@ -5,42 +5,43 @@ function getComputerChoice(){
         case 0:
             console.log('Rock');
             return('Rock');
-            break;
         case 1:
             console.log('Paper');
             return('Paper');
-            break;
         case 2:     
             console.log('Scissors');
-            return('Scissors');
-            break;   
+            return('Scissors'); 
     }
 }
 
 function playRound(playerSelection, computerSelection){
-    if(playerSelection == 'Rock' && computerSelection == 'Paper'){
-        console.log('You Lose! Paper beats Rock');        
+    if(playerSelection == 'rock' && computerSelection == 'Paper'){
+        window.alert('You Lose! Paper beats Rock');        
     }
-    else if(playerSelection == 'Rock' && computerSelection == 'Scissors'){
-        console.log('You Won! Rock beats Scissors');
+    else if(playerSelection == 'rock' && computerSelection == 'Scissors'){
+        window.alert('You Won! Rock beats Scissors');
     }
-    else if(playerSelection == 'Paper' && computerSelection == 'Scissors'){
-        console.log('You Lose! Scissors beats Paper');
+    else if(playerSelection == 'paper' && computerSelection == 'Scissors'){
+        window.alert('You Lose! Scissors beats Paper');
     }
-    else if(playerSelection == 'Paper' && computerSelection == 'Rock'){
-        console.log('You Won! Paper beats Rock');
+    else if(playerSelection == 'paper' && computerSelection == 'Rock'){
+        window.alert('You Won! Paper beats Rock');
     }
-    else if(playerSelection == 'Scissors' && computerSelection == 'Rock'){
-        console.log('You Lose! Rock beats Scissors');
+    else if(playerSelection == 'scissors' && computerSelection == 'Rock'){
+        window.alert('You Lose! Rock beats Scissors');
     }
-    else if(playerSelection == 'Scissors' && computerSelection == 'Paper'){
-        console.log('You Won! Scissors beats Paper');
+    else if(playerSelection == 'scissors' && computerSelection == 'Paper'){
+        window.alert('You Won! Scissors beats Paper');
     }
-    else if(playerSelection == 'Scissors' && computerSelection == 'Scissors' || playerSelection == 'Rock' && computerSelection == 'Rock' || playerSelection == 'Paper' && computerSelection == 'Paper'){
-        console.log('Tie! Play again');
+    else if(playerSelection == 'scissors' && computerSelection == 'Scissors' || playerSelection == 'rock' && computerSelection == 'Rock' || playerSelection == 'paper' && computerSelection == 'Paper'){
+        window.alert('Tie! Play again');
     }
 }
 
-var playerSelection = 'Paper';
-var computerSelection = getComputerChoice();
-playRound(playerSelection, computerSelection);
+function getValueAndPlay(){
+    var playerSelection = document.getElementById("myOption").value;
+    console.log(playerSelection);
+    var computerSelection = getComputerChoice();
+    playRound(playerSelection.toLowerCase(), computerSelection);
+}
+
